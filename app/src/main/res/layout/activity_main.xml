@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="16dp">
 
     <TextView
+        android:id="@+id/textView_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Śledzenie aktywności fizycznej"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/editText_distance"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Dystans (km)"
+        android:inputType="numberDecimal"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/editText_duration"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Czas trwania (min)"
+        android:inputType="numberDecimal"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/editText_calories"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Spalone kalorie"
+        android:inputType="numberDecimal"
+        android:layout_gravity="center"/>
+
+    <SeekBar
+        android:id="@+id/seekBar_intensity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="3" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <RadioButton
+            android:id="@+id/radioButton_walk"
+            android:text="Spacer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/radioButton_run"
+            android:text="Bieg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/radioButton_strength"
+            android:text="Trening Siłowy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodaj trening"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
